@@ -18,11 +18,10 @@ data EvalRequest =
     EvalRequest { 
         _script :: Text, 
         _data :: HashMap Text Value
-      } deriving (Show, Generic, ToJSON)
+    } deriving (Show, Generic, ToJSON)
 
 instance FromJSON EvalRequest 
     where parseJSON = genericParseJSON defaultOptions { fieldLabelModifier = Prelude.drop 1 }
-
 
 replaceArgsInScript (EvalRequest s d) = foldrWithKey replaceValuesScript s d
     where getArrayText = T.toStrict . T.decodeUtf8 . encode
