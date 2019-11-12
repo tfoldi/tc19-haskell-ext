@@ -24,6 +24,16 @@ instance FromJSON EvalRequest
     where parseJSON = genericParseJSON defaultOptions { fieldLabelModifier = Prelude.drop 1 }
 
 
+replaceArgsInScript (EvalRequest s d) = foldrWithKey replaceValuesScript s d
+    where getArrayText = T.toStrict . T.decodeUtf8 . encode
+          replaceValuesScript k v = replace k (getArrayText v)
+
+command = replace_args . decode
+    where replace_args Nothing = "Json parse error"
+          replace_args (Just er) = unpack $ replaceArgsInScript er
+
+executeCommand p = readProcess "mueval" ["-e", command p] []
+
 infoResponse = "{\"description\": \"\", \"creation_time\": \"0\", \"state_path\": \"\", \"server_version\": \"0.8.7\", \"name\": \"haskell\", \"versions\": {\"v1\": {\"features\": {}}}}"
 
 textAsJson t = setHeader "Content-Type" "application/json" >> text t
