@@ -3,7 +3,28 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/lock_files
 
-packages: []
+packages:
+- completed:
+    hackage: mueval-0.9.3@sha256:9ecdbdc8f28ed7bc3f6f6cb5c2708e69f3b099db812bd2b8a51730915f7dab9e,2077
+    pantry-tree:
+      size: 740
+      sha256: 23275f1644942f15e09fa774fa7036dfd219eaf8ea942bb5418208d649e5145c
+  original:
+    hackage: mueval-0.9.3@sha256:9ecdbdc8f28ed7bc3f6f6cb5c2708e69f3b099db812bd2b8a51730915f7dab9e,2077
+- completed:
+    hackage: text-replace-0.0.0.4@sha256:88800aba160dfb512cf43b24063170d34900e1646ad21f28715a22679f42ae15,1738
+    pantry-tree:
+      size: 293
+      sha256: a7d17c85a9637ef9cc6762ea4e9b932191ede485655b5d18d41292cc9475b105
+  original:
+    hackage: text-replace-0.0.0.4@sha256:88800aba160dfb512cf43b24063170d34900e1646ad21f28715a22679f42ae15,1738
+- completed:
+    hackage: show-0.6@sha256:073c283f62d56cab2a2de5455125c7fc2d55642bac4cf0e778ed6525226a44ec,903
+    pantry-tree:
+      size: 198
+      sha256: 3b4495eda11d340bac942b24d34c43c8bfb757c3861e166f94cb1dec897f6042
+  original:
+    hackage: show-0.6@sha256:073c283f62d56cab2a2de5455125c7fc2d55642bac4cf0e778ed6525226a44ec,903
 snapshots:
 - completed:
     size: 525663
