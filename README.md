@@ -20,13 +20,15 @@ Pretty cool, ha? #2 works well when you start building your own company-specific
 
 Being a special snowflake is my number one mission during these hackathons. As a programming language, Haskell seems to have a similar mission, it is really different (in a good way) than the other programming languages. To understand why Haskell is different, let me share this quote from this “How to Learn Haskell” guide:
 
-First of all, you should probably pretend like you’ve never programmed before. If you run into a word like return or class don’t assume that you know what that means; chances are that you don’t. Here’s a general idea of where you stand, depending on what languages you already know well:
+> First of all, you should probably pretend like you’ve never programmed before. If you run into a word like return or class don’t assume that you know what that means; chances are that you don’t. Here’s a general idea of where you stand, depending on what languages you already know well:
 
-C, C++, Java: Haskell will probably blow your mind. The notion of classes is almost completely different, return doesn’t mean what you think it does, the algorithmic patterns are distinct, you don’t get loops, and code doesn’t run in the order it’s typed on the screen. What!? Yeah. It’s pretty awesome.
+> C, C++, Java: Haskell will probably blow your mind. The notion of classes is almost completely different, return doesn’t mean what you think it does, the algorithmic patterns are distinct, you don’t get loops, and code doesn’t run in the order it’s typed on the screen. What!? Yeah. It’s pretty awesome.
 
 Trust me, it is *really* awesome, especially when it goes to analytical expressions. Look at this Fibonacci calculation code snippet:
 
-`fix (scanl (+) 0 . (1:))`
+```haskell
+fix (scanl (+) 0 . (1:))
+```
 
 Every single character has its meaning. Fix function is typed recursive lambda generator, scanl  is an accumulator function, “.” is a function composition operator and “:” a list constructor. Makes sense.
 
@@ -41,3 +43,7 @@ primesT = sieve [2..]
 Looks exactly as the mathematical definition of prime numbers. This is one Haskell’s value: its expressions are close to mathematical equations.
 
 More here: https://databoss.starschema.net/tableau-external-services-api-adding-haskell-calculations/
+
+# License
+
+BSD 3-Clause.
